@@ -2,13 +2,13 @@
 title: Another Blog
 url: "https://zhangxiang2014.github.io/"    # the protocol and hostname of your site, eg. `http://laobubu.github.io`
 baseurl: "" # the prefix of your site uri, eg. `/jekyll-theme-EasyBook` or just one slash `/`
-#timezone: Asia/Chongqing
+#timezone: Asia/Beijing
 description: >
-  One or more sentences introducing this blog.
+  这里有片麦田，我会在这里守望.
 
 # Your information
-email: your_email@example.com
-author: your_name
+email: 805198265@qq.com
+author: 诗意的猿
 avatar: "//www.gravatar.com/avatar/your_email_md5?d=mm&s=135"
 profile: One sentence introducing yourself.
 #twitter_username: twitter_username
