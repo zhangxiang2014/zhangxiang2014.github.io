@@ -1,10 +1,10 @@
 ---
 layout: page
-title: About
+title: About Me
 permalink: /about/
 public: true
 ---
 
-Welcome to this website!
+欢迎来到诗意的猿blog，这里还没有什么干货，只有一些情感的记录，不过未来会有的，先立个flag
 
-> This website is using [laobubu](http://laobubu.net)'s theme: [EasyBook](https://github.com/laobubu/jekyll-theme-EasyBook)
+> 我叫张翔，定位北京，目前就职于小米科技做android研发，一个略带文艺范的很普通的coder。
