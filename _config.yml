@@ -18,7 +18,8 @@ github_username:  zhangxiang2014
 #  choose one and un-comment the line to active it
 #disqus_shortname: xxx   # get one: https://disqus.com/admin/signup/
 #duoshuo_shortname: xxx  # get one: http://duoshuo.com/create-site/
-youyan_uid: 2139092 get one: http://www.uyan.cc/sites
+youyan_uid: 2139092 
+get one: http://www.uyan.cc/sites
 
 permalink: /archivers/:title
 gems:
