@@ -1,5 +1,11 @@
 {% if page.nocomments %}
 {% else %}
+{% if site.youyan_uid %}
+<!-- UY BEGIN -->
+<div id="uyan_frame"></div>
+<script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2139092"></script>
+<!-- UY END -->
+{% endif %}
 {% if site.disqus_shortname %}
 <div class="post-comments">
   <div id="disqus_thread"></div>
