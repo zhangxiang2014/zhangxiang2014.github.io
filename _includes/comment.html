@@ -1,11 +1,11 @@
 {% if page.nocomments %}
 {% else %}
 {% if site.youyan_uid %}
-<div class="post-comments"></div>
+<div class="post-comments">
 <!-- UY BEGIN -->
   <div id="uyan_frame"></div>
   <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2139092"></script>
-<!-- JiaThis Button BEGIN -->
+  <!-- JiaThis Button BEGIN -->
    <div class="jiathis_style">
 	<span class="jiathis_txt">分享到：</span>
 	<a class="jiathis_button_qzone">QQ空间</a>
@@ -18,8 +18,9 @@
       var jiathis_config = {data_track_clickback:'true'};
    </script>
    <script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=2139092" charset="utf-8"></script>
-<!-- JiaThis Button END -->
-<!-- UY END -->
+   <!-- JiaThis Button END -->
+<!-- UY END -->	   
+</div>	
 {% endif %}
 {% if site.disqus_shortname %}
 <div class="post-comments">
