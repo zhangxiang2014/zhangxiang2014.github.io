@@ -41,7 +41,7 @@ so? what is 智能指针？（这里提下，这个指针不是指*，指的是�
 
 # 2.强指针
 ## 2.1 实现
-与轻量级指针不同，强指针不是直接使用一个整数来维护对象的引用计数的，而是使用一个`weakref_impl`对象，这个对象是继承`RefBase`类（一个类要使用强指针和弱指针必须继承`RefBase`）中的内部类`weakref_type`类，其中`weakref_type`仅仅只定义了引用计数维护接口，具体实现是`weakref_type`。（具体关系如下图，图是手码的，一个是继承关系，一个是引用关系）    
+与轻量级指针不同，强指针不是直接使用一个整数来维护对象的引用计数的，而是使用一个`weakref_impl`对象，这个对象是继承`RefBase`类（一个类要使用强指针和弱指针必须继承`RefBase`）中的内部类`weakref_type`类，其中`weakref_type`仅仅只定义了引用计数维护接口，具体实现是`weakref_impl`。（具体关系如下图，图是手码的，一个是继承关系，一个是引用关系）    
 ![继承关系](http://upload-images.jianshu.io/upload_images/1420306-ecb66dcd959ca55d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 这里说一下成员变量mFlags的作用，mFlags这个标志位有三种取值：
 > - 0: 表示对象的生命周期只受强引用计数影响；默认就是这个。
