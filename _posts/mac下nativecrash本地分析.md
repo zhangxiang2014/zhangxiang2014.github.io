@@ -1,18 +1,18 @@
 ---
 layout: post
 title:  mac下nativecrash本地分析流程
-date:   2017-09-20 20:13
+date:   2019-11-13 15:13
 categories: android
 permalink: /archivers/mac_nativecrash_local
 ---
 
 建议先阅读[Android 平台 Native 代码的崩溃捕获机制及实现
-](https://mp.weixin.qq.com/s/g-WzYF3wWAljok1XjPoo7w)
-###1.首先本地获得程序crash的.dump文件
+](https://mp.weixin.qq.com/s/g-WzYF3wWAljok1XjPoo7w)  
+### 1.首先本地获得程序crash的.dump文件
 nativecrash的dump文件获取可以参考
 [极客时间性能优化教学的sample](https://github.com/AndroidAdvanceWithGeektime/Chapter01)
 
-###2.本地编译google breakpad工具用来分析.dump文件
+### 2.本地编译google breakpad工具用来分析.dump文件
 > git clone https://github.com/google/breakpad.git  
 ./configure  
 make
@@ -26,14 +26,14 @@ make
 xcode-select --install  
 - 这个时候会弹出一个窗口，提示让下载xcode，选择安装重复make
 
-###3.使用minidump_stackwalker 工具来根据 minidump 文件生成堆栈跟踪log
+### 3.使用minidump_stackwalker 工具来根据 minidump 文件生成堆栈跟踪log
 > 
 > cd src/processor/  
  ./minidump_stackwalk ../../../Chapter01/crashDump/06842276-c84f-4fb3-a24ba3b3-e43a6b7c.dmp >crash.txt   
     
 将dump文件转为txt文件
 
-###4.观察txt文件跟踪log
+### 4.观察txt文件跟踪log
 摘录重点部分如下：
 >
 >Operating system: Android
@@ -52,7 +52,7 @@ CPU: arm64
 
 cpu是arm64，错误类型 SIGSEGV /SEGV_MAPERR，so文件的偏移地址0x650（这个信息最为重要直接对应到实际代码）
 
-###5.符号解析，利用ndk下分析工具分析对应so文件和偏移地址
+###  5.符号解析，利用ndk下分析工具分析对应so文件和偏移地址
 可以使用 ndk 中提供的addr2line来根据地址进行一个符号反解的过程,该工具在$NDK_HOME/toolchains/arm-linux-androideabi-4.9/prebuilt/darwin-x86_64/bin/arm-linux-androideabi-addr2line  
 注意：此处要注意一下平台，如果是 arm64位的 so，解析是需要使用 aarch64-linux-android-4.9下的工具链
 >
